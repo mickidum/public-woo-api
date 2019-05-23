@@ -22,9 +22,9 @@
  	padding-top: 22px;
 }
 
-.public-woo-api tr:first-child th, .public-woo-api tr:first-child td {
+/*.public-woo-api tr:first-child th, .public-woo-api tr:first-child td {
 	padding-bottom: 0;
-}
+}*/
 
 .public-woo-api .woo-endpoint {
 	position: relative;
