@@ -28,7 +28,8 @@ class Public_Woo_Api_Endpoints
 	    $consumer_secret,
 	    [
 	        'version' => 'wc/v3',
-	        'verify_ssl' => false
+	        'verify_ssl' => false,
+	        'query_string_auth' => true
 	    ]
 		);
 		add_action( 'rest_api_init', array($this, 'register_public_woo_routes') );
