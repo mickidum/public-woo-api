@@ -171,7 +171,7 @@ class Public_Woo_Api_Settings {
 			$endpoint = $options['endpoint'];
 		}
 
-		echo '<div class="woo-endpoint"><strong>'.get_site_url().'/wp-json/'.$endpoint.'</strong></div><input type="text" id="endpoint" name="public_woo_api_main_options[endpoint]" value="' . esc_attr($endpoint) . '" placeholder="Your Endpoint" /><br />';
+		echo '<div class="woo-endpoint"><strong id="endpoint-for-select">'.get_site_url().'/wp-json/'.$endpoint.'</strong></div><input type="text" id="endpoint" name="public_woo_api_main_options[endpoint]" value="' . esc_attr($endpoint) . '" placeholder="Your Endpoint" /><br />';
 	}
 
 	public function consumer_key_callback() {

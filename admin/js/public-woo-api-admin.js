@@ -28,5 +28,22 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
+	 $(document).on('click', '#endpoint-for-select', function(event) {
+	 	event.preventDefault();
+	 	selectText('endpoint-for-select');
+	 });
+
+	function selectText(containerid) {
+    if (document.selection) { // IE
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select();
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+    }
+	}
 
 })( jQuery );

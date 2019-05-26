@@ -22,10 +22,6 @@
  	padding-top: 22px;
 }
 
-/*.public-woo-api tr:first-child th, .public-woo-api tr:first-child td {
-	padding-bottom: 0;
-}*/
-
 .public-woo-api .woo-endpoint {
 	position: relative;
 	color: green;
@@ -35,6 +31,7 @@
 	position: absolute;
 	top: -20px;
 	right: 0;
+	cursor: pointer;
 }
 
 .public-woo-api input[type="text"] {
@@ -42,9 +39,3 @@
 	height: 36px;
 	font-size: 16px;
 }
-
-/*.public-woo-api input[type="text"].woo-endpoint {
-	width: auto;
-	height: auto;
-	font-size: 14px;
-}*/
