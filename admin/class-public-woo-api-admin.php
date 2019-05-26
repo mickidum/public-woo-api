@@ -61,7 +61,7 @@ class Public_Woo_Api_Admin {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Wppb_Demo_Plugin_Admin_Settings. Registers the admin settings and page.
+	 * - Public_Woo_Api_Admin_Settings. Registers the admin settings and page.
 	 *
 	 *
 	 * @since    1.0.0

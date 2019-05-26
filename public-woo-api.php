@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name:       Public Woo Api
  * Plugin URI:        https://github.com/mickidum/public-woo-api
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Allows to fetch WooCommerce products, categories, tags, variations and reviews without authentication.
  * Version:           1.0.0
  * Author:            Mickidum
  * Author URI:        mickidum.github.io

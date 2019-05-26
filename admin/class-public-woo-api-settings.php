@@ -49,15 +49,15 @@ class Public_Woo_Api_Settings {
 	}
 
 	/**
-	 * This function introduces the theme options into the 'Appearance' menu and into a top-level
-	 * 'WPPB Demo' menu.
+	 * This function introduces the plugin options in the 'Tools' menu
 	 */
 	public function setup_plugin_options_menu() {
 
 		//Add the menu to the Plugins set of menu items
-		add_menu_page(
+		add_submenu_page(
+			'tools.php',
 			'Public Woo Api Settings', 					// The title to be displayed in the browser window for this page.
-			'Public Woo',					// The text to be displayed for this menu item
+			'Public Woo Options',					// The text to be displayed for this menu item
 			'manage_options',					// Which type of users can see this menu item
 			'public_woo_api_options',			// The unique ID - that is, the slug - for this menu item
 			array( $this, 'render_settings_page_content')				// The name of the function to call when rendering this menu's page

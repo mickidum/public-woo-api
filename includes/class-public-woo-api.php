@@ -169,7 +169,7 @@ class Public_Woo_Api {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		$this->loader->add_action( 'admin_menu', $plugin_settings, 'setup_plugin_options_menu' );
+		$this->loader->add_action( 'admin_menu', $plugin_settings, 'setup_plugin_options_menu', 100 );
 		$this->loader->add_action( 'admin_init', $plugin_settings, 'initialize_main_options' );
 
 	}
