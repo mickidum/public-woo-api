@@ -1,8 +1,8 @@
-# public-woo-api
+# Public Woo Api - Wordpress plugin
+
+**Public Woo Api - view on wordpress.org:** https://wordpress.org/plugins/public-woo-api
 
 Allows to fetch WooCommerce products, categories, tags, variations and reviews without authentication.
-
-**Support and Requests in Github:** https://github.com/mickidum/public-woo-api
 
 ### This plugin supports:
 
