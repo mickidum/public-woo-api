@@ -96,16 +96,14 @@ class Public_Woo_Api_Endpoints
 		}
 
 		try {
+			
 			$products = $this->woocommerce->get( 'products', $filters );
-			$response = $this->woocommerce->http->getResponse();
-			$headers = $response->getHeaders();
-			if(!empty($headers)) {
-				$total = $headers['X-WP-Total'];
-				$totalPages = $headers['X-WP-TotalPages'];
-				header('X-WP-Total: ' . $total);
-				header('X-WP-TotalPages: ' . $totalPages);
-			}
-			return $products;
+			$response_wc = $this->woocommerce->http->getResponse();
+			$headers = $response_wc->getHeaders();
+			$response = rest_ensure_response($products);
+			$response->set_headers($headers);
+			return $response;
+			
 		} catch (HttpClientException $e) {
 			return new WP_Error($e->getCode(), $e->getMessage());
 		}
