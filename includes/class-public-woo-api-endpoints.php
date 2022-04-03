@@ -38,52 +38,62 @@ class Public_Woo_Api_Endpoints
 	public function register_public_woo_routes() {
     register_rest_route( $this->endpoint, '/products', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_products')
+        'callback' => array($this, 'view_products'),
+        'permission_callback' => '__return_true',
     ));
 
     register_rest_route( $this->endpoint, '/products' . '/(?P<id>[\d]+)', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_product')
+        'callback' => array($this, 'view_product'),
+        'permission_callback' => '__return_true',
     ));
 
     register_rest_route( $this->endpoint, '/products' . '/(?P<id>[\d]+)' . '/variations', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_product_variations')
+        'callback' => array($this, 'view_product_variations'),
+        'permission_callback' => '__return_true',
     ));
 
     register_rest_route( $this->endpoint, '/products' . '/(?P<id>[\d]+)' . '/variations' . '/(?P<v_id>[\d]+)', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_product_variation')
+        'callback' => array($this, 'view_product_variation'),
+        'permission_callback' => '__return_true',
     ));
 
     register_rest_route( $this->endpoint, '/products/categories', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_products_categories')
+        'callback' => array($this, 'view_products_categories'),
+        'permission_callback' => '__return_true',
     ));
 
     register_rest_route( $this->endpoint, '/products/categories' . '/(?P<id>[\d]+)', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_products_category')
+        'callback' => array($this, 'view_products_category'),
+        'permission_callback' => '__return_true',
     ));
 
     register_rest_route( $this->endpoint, '/products/tags', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_products_tags')
+        'callback' => array($this, 'view_products_tags'),
+        'permission_callback' => '__return_true',
     ));
 
     register_rest_route( $this->endpoint, '/products/tags' . '/(?P<id>[\d]+)', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_products_tag')
+        'callback' => array($this, 'view_products_tag'),
+        'permission_callback' => '__return_true',
     ));
 
     register_rest_route( $this->endpoint, '/products/reviews', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_products_reviews')
+        'callback' => array($this, 'view_products_reviews'),
+        'permission_callback' => '__return_true',
     ));
 
     register_rest_route( $this->endpoint, '/products/reviews' . '/(?P<id>[\d]+)', array(
         'methods' => 'GET',
-        'callback' => array($this, 'view_products_review')
+        'callback' => array($this, 'view_products_review'),
+        'permission_callback' => '__return_true',
     ));
 	}
 
@@ -103,7 +113,7 @@ class Public_Woo_Api_Endpoints
 			$response = rest_ensure_response($products);
 			$response->set_headers($headers);
 			return $response;
-			
+
 		} catch (HttpClientException $e) {
 			return new WP_Error($e->getCode(), $e->getMessage());
 		}
