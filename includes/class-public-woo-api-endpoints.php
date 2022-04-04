@@ -110,9 +110,11 @@ class Public_Woo_Api_Endpoints
 			$products = $this->woocommerce->get( 'products', $filters );
 			$response_wc = $this->woocommerce->http->getResponse();
 			$headers = $response_wc->getHeaders();
-			$response = rest_ensure_response($products);
-			$response->set_headers($headers);
-			return $response;
+			if (isset($headers['X-WP-Total']) && isset($headers['X-WP-TotalPages'])) {
+				header('X-WP-Total: ' . $headers['X-WP-Total']);
+				header('X-WP-TotalPages: ' . $headers['X-WP-TotalPages']);
+			}
+			return $products;
 
 		} catch (HttpClientException $e) {
 			return new WP_Error($e->getCode(), $e->getMessage());
